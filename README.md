@@ -37,14 +37,6 @@ Interior designer focused on innovative, functional, and aesthetically pleasing 
 - **Gallery** — Filterable project visuals and graphic explorations
 - **Contact** — Phone and email links
 
-## Run Locally
-
-No build step required. Clone the repo and open `index.html` in a browser, or serve the folder with any static file server:
-
-```bash
-git clone https://github.com/xt67/ibrat-portfolio-site.git
-cd ibrat-portfolio-site
-```
 
 ## Contact
 
