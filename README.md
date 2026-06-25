@@ -6,8 +6,6 @@ A single-page portfolio website showcasing the interior design work of **Ibrat R
 
 **https://xt67.github.io/ibrat-portfolio-site/**
 
-> If the link does not load yet, enable GitHub Pages for this repository: **Settings → Pages → Deploy from branch → `main` / root**.
-
 ## Repository
 
 **https://github.com/xt67/ibrat-portfolio-site**
