@@ -25,7 +25,7 @@ Both files are also available from the **Download Portfolio** and **Download CV*
 
 Interior designer focused on innovative, functional, and aesthetically pleasing spaces. Based in Moshi, Pune.
 
-**Education:** T.Y.B.Sc. Interior Design
+**Education:** Fourth Year, B.Sc. Interior Design, Dr. D. Y. Patil School of Design
 
 **Tools:** AutoCAD, SketchUp, SketchUp Layout, Photoshop
 
