@@ -4,11 +4,11 @@ A single-page portfolio website showcasing the interior design work of **Ibrat R
 
 ## Live Site
 
-**https://xt67.github.io/studioibrat/**
+**https://ibrat-sprojects.github.io/studioibrat/**
 
 ## Repository
 
-**https://github.com/xt67/studioibrat**
+**https://github.com/ibrat-sprojects/studioibrat**
 
 ## Downloads
 
