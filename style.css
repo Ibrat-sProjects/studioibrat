@@ -857,6 +857,33 @@ button {
   transform: translateY(-2px);
 }
 
+.mail-float {
+  position: fixed;
+  right: 18px;
+  bottom: 148px;
+  z-index: 28;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: var(--red);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+  transition: transform 180ms ease;
+}
+
+.mail-float:hover,
+.mail-float:focus-visible {
+  transform: translateY(-2px);
+}
+
 .back-to-top {
   position: fixed;
   right: 18px;
@@ -1185,6 +1212,14 @@ button {
 
   .footer-inner {
     grid-template-columns: 1fr;
+  }
+
+  .mail-float {
+    right: 14px;
+    bottom: 140px;
+    min-height: 42px;
+    padding: 0 14px;
+    font-size: 0.66rem;
   }
 
   .whatsapp-float {
