@@ -215,20 +215,65 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-// Copy email to clipboard on clicking the mail floating button
-const mailFloat = document.querySelector(".mail-float");
-if (mailFloat) {
-  mailFloat.addEventListener("click", () => {
-    navigator.clipboard.writeText("shaikhibrat1003@gmail.com").then(() => {
-      const originalText = mailFloat.innerHTML;
-      mailFloat.innerHTML = "Copied!";
-      mailFloat.classList.add("copied");
-      setTimeout(() => {
-        mailFloat.innerHTML = originalText;
-        mailFloat.classList.remove("copied");
-      }, 2000);
-    }).catch(err => {
-      console.warn("Failed to copy email: ", err);
-    });
+// Mail floating popover toggle and copy to clipboard action
+const mailFloatBtn = document.getElementById("mailFloatBtn");
+const mailPopover = document.getElementById("mailPopover");
+const copyEmailBtn = document.getElementById("copyEmailBtn");
+
+if (mailFloatBtn && mailPopover) {
+  mailFloatBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isOpen = mailPopover.classList.toggle("open");
+    mailFloatBtn.setAttribute("aria-expanded", String(isOpen));
   });
+
+  document.addEventListener("click", (e) => {
+    if (!mailPopover.contains(e.target) && e.target !== mailFloatBtn) {
+      mailPopover.classList.remove("open");
+      mailFloatBtn.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  if (copyEmailBtn) {
+    copyEmailBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const email = "shaikhibrat1003@gmail.com";
+      
+      const showCopySuccess = () => {
+        const originalText = copyEmailBtn.innerHTML;
+        copyEmailBtn.innerHTML = "Copied!";
+        copyEmailBtn.style.color = "var(--sage)";
+        setTimeout(() => {
+          copyEmailBtn.innerHTML = originalText;
+          copyEmailBtn.style.color = "";
+        }, 2000);
+      };
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(() => {
+          showCopySuccess();
+        }).catch(() => {
+          fallbackCopy(email, showCopySuccess);
+        });
+      } else {
+        fallbackCopy(email, showCopySuccess);
+      }
+    });
+  }
+}
+
+function fallbackCopy(text, onSuccess) {
+  const input = document.createElement("input");
+  input.value = text;
+  input.style.position = "fixed";
+  input.style.opacity = "0";
+  document.body.appendChild(input);
+  input.select();
+  try {
+    document.execCommand("copy");
+    onSuccess();
+  } catch (err) {
+    console.error("Fallback copy failed", err);
+  }
+  document.body.removeChild(input);
 }

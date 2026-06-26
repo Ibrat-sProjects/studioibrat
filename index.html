@@ -280,9 +280,22 @@
       </div>
     </footer>
 
-    <a class="mail-float" href="mailto:shaikhibrat1003@gmail.com?cc=ibratshaikh25@gmail.com&subject=Interior%20Design%20Inquiry" aria-label="Email Ibrat Shaikh">
-      Email
-    </a>
+    <div class="mail-popup-container">
+      <div class="mail-popover" id="mailPopover">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=shaikhibrat1003@gmail.com&cc=ibratshaikh25@gmail.com&su=Interior%20Design%20Inquiry" target="_blank" rel="noopener noreferrer">
+          Gmail (Web)
+        </a>
+        <a href="mailto:shaikhibrat1003@gmail.com?cc=ibratshaikh25@gmail.com&subject=Interior%20Design%20Inquiry">
+          Default Mail App
+        </a>
+        <button type="button" id="copyEmailBtn">
+          Copy Address
+        </button>
+      </div>
+      <button class="mail-float" id="mailFloatBtn" aria-label="Email options" aria-expanded="false">
+        Email
+      </button>
+    </div>
 
     <a class="whatsapp-float" href="https://wa.me/919168012504" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
       WhatsApp
