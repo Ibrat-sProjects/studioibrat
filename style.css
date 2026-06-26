@@ -884,6 +884,10 @@ button {
   transform: translateY(-2px);
 }
 
+.mail-float.copied {
+  background: var(--blue);
+}
+
 .back-to-top {
   position: fixed;
   right: 18px;

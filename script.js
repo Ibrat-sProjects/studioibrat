@@ -214,3 +214,21 @@ document.addEventListener("keydown", (event) => {
     goToNextImage();
   }
 });
+
+// Copy email to clipboard on clicking the mail floating button
+const mailFloat = document.querySelector(".mail-float");
+if (mailFloat) {
+  mailFloat.addEventListener("click", () => {
+    navigator.clipboard.writeText("shaikhibrat1003@gmail.com").then(() => {
+      const originalText = mailFloat.innerHTML;
+      mailFloat.innerHTML = "Copied!";
+      mailFloat.classList.add("copied");
+      setTimeout(() => {
+        mailFloat.innerHTML = originalText;
+        mailFloat.classList.remove("copied");
+      }, 2000);
+    }).catch(err => {
+      console.warn("Failed to copy email: ", err);
+    });
+  });
+}
